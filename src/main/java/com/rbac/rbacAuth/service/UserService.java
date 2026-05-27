@@ -42,7 +42,7 @@ public class UserService {
     public String login(User user) {
 
         User dbUser = userRepository
-                .findByUsername(user.getUsername())
+                .findByEmail(user.getEmail())
                 .orElseThrow(() ->
                         new RuntimeException("User Not Found"));
 
